@@ -24,7 +24,7 @@ export function SummitApp({initialView="itinerary"}:{initialView?:View}){
     setEditing(null);await load();setNotice("Saved — your change will persist after refresh.")
   }catch(err){setNotice(err instanceof Error?err.message:"Save failed")}};
   const filteredPeople=useMemo(()=>category==="all"?people:people.filter(p=>p.category===category),[people,category]);
-  const groups=useMemo(()=>[1,2,3,4,5].filter(n=>day===0||day===n).map(n=>({n,rows:sessions.filter(s=>s.day_number===n).sort((a,b)=>(a.sort_order-b.sort_order)||a.start_time.localeCompare(b.start_time))})),[sessions,day]);
+  const groups=useMemo(()=>[1,2,3,4,5].filter(n=>day===0||day===n).map(n=>({n,rows:sessions.filter(s=>s.day_number===n).sort((a,b)=>a.start_time.localeCompare(b.start_time)||(a.sort_order-b.sort_order))})),[sessions,day]);
   return <div className="app-shell">
     <aside className={`sidebar ${menu?"open":""}`}><div className="brand"><div className="brand-mark">GO</div><div><strong>GOAI Summit</strong><small>Malaysia 2026</small></div></div><nav className="nav">{(["itinerary","people","fair","register","tickets","crm","affiliates"]as View[]).map(v=><button key={v} className={view===v?"active":""} onClick={()=>navigate(v)}><span>{icons[v]}</span>{v==="fair"?"Digital Fair":v==="crm"?"CRM":v[0].toUpperCase()+v.slice(1)}</button>)}</nav><div className="side-note"><strong>16–20 December 2026</strong>Genting Highlands & Kuala Lumpur</div></aside>
     <main className="main"><div className="promise"><button className="mobile-menu" onClick={()=>setMenu(!menu)}>☰</button><b>Learn. Source. Connect. Grow.</b><span>5 days · 4 nights · Malaysia</span></div><div className="content">
