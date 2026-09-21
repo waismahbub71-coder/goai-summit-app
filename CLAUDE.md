@@ -10,9 +10,14 @@
 - `lint`: `next lint`
 - `start`: `next start`
 
+## Decisions
+
+- Editing is restricted to admin users only
+
 ## Notes
 
 - Project has implemented: editable itinerary, people directory, fair registration, ticket workflows, CRM, affiliate management, and hardened registration with demo seed persistence.
 - Commit was a trivial deployment trigger (chore), no functional changes.
 - Deployment now explicitly uses Bun as declared package manager (packageManager field in package.json)
 - commit fixes ordering of live itinerary sessions by time
+- Added signup flow (user registration) and admin-only editing capability
