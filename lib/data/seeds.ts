@@ -1,4 +1,4 @@
-import type { Exhibitor, Participant, Person, Session, Ticket } from "./types";
+import type { Communication, Exhibitor, Participant, Person, Referral, Session, Ticket } from "./types";
 const day=(n:number,date:string,label:string,theme:string,rows:Array<[string,string,string,string,string[]]>)=>rows.map((r,i):Session=>({id:`seed-session-${n}-${i}`,day_number:n,day_date:date,day_label:label,theme,start_time:r[0],end_time:r[1],title:r[2],session_type:r[3],speakers:r[4],location:n===4||n===5?"Kuala Lumpur":"Genting Highlands",sort_order:i+1}));
 export const seedSessions:Session[]=[
 ...day(1,"2026-12-16","Day 1 — Wednesday, 16 Dec","Summit Inauguration & Expert Onboarding",[["09:00","10:30","Summit Inauguration","summit",["Professor Dr. Harunur Rashid"]],["10:30","11:00","High Tea Break","break",[]],["11:00","13:00","AI Integration in Business Consultancy & Training","summit",["Vince Tan","Dennis Sim","KT Goo","Roy Phay"]],["13:00","14:30","Lunch Break","meal",[]],["14:30","16:30","AI CRM & Soft Skills Development in Business","summit",["John Tan","Ching Yu Tan","Ethan"]],["16:30","17:00","High Tea Break","break",[]],["17:00","19:00","Customer Acquisition & AI Business Growth Management","summit",["Ng Xien Puo (XP)","Larry"]],["19:00","20:30","Dinner","meal",[]],["20:30","22:00","Closing Session: Fundraising","summit",["Nazril 'Nash' Idrus"]]]),
@@ -20,3 +20,13 @@ export const seedTickets:Ticket[]=[
   {id:"seed-ticket-3",category_name:"Group (5+)",price_amount:399,currency:"USD",inclusions:"Standard inclusions for groups of five or more",refund_policy:"Placeholder — final terms to be confirmed"},
 ];
 export const seedParticipants:Participant[]=[];
+export const seedCommunications:Communication[]=[
+  {id:"seed-comms-1",channel:"email",subject:"Welcome to GOAI Summit Malaysia 2026",audience_segment:"All registered",body_preview:"Your registration is confirmed. Learn. Source. Connect. Grow.",status:"sent",sent_at:"2026-09-21T10:00:00+08:00"},
+  {id:"seed-comms-2",channel:"email",subject:"Early bird ticket reminder",audience_segment:"Unregistered",body_preview:"Secure your spot for 16–20 December 2026.",status:"drafted",sent_at:null},
+  {id:"seed-comms-3",channel:"phone",subject:"VIP confirmation call",audience_segment:"VIP",body_preview:"Confirm Gala Dinner seating preference.",status:"sent",sent_at:"2026-09-20T14:00:00+08:00"},
+];
+export const seedReferrals:Referral[]=[
+  {id:"seed-ref-1",affiliate_name:"John Chong",referred_name:"Ahmad Rahman",referred_email:"ahmad@example.com",sale_amount:499,currency:"USD",referral_status:"confirmed",payout_status:"approved",tax_note:"Withholding tax applicable"},
+  {id:"seed-ref-2",affiliate_name:"Vanda Chan",referred_name:"Sarah Lim",referred_email:"sarah@example.com",sale_amount:999,currency:"USD",referral_status:"confirmed",payout_status:"pending",tax_note:"No tax withholding"},
+  {id:"seed-ref-3",affiliate_name:"Simon Leung",referred_name:"David Tan",referred_email:"david@example.com",sale_amount:399,currency:"USD",referral_status:"applied",payout_status:"pending",tax_note:""},
+];
