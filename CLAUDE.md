@@ -13,6 +13,7 @@
 ## Decisions
 
 - Editing is restricted to admin users only
+- Signup flow now includes community registration (beyond individual user registration).
 
 ## Notes
 
@@ -21,3 +22,4 @@
 - Deployment now explicitly uses Bun as declared package manager (packageManager field in package.json)
 - commit fixes ordering of live itinerary sessions by time
 - Added signup flow (user registration) and admin-only editing capability
+- Added fair partner organization and community signup features.
