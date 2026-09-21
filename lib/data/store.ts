@@ -5,7 +5,7 @@ import type { TableMap } from "./types";
 const configured=Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL&&process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY);
 const supabase=configured?createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!,process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!):null;
 const seeds:{[K in keyof TableMap]:TableMap[K][]}={schedule_sessions:seedSessions,people:seedPeople,digital_fair_exhibitors:seedExhibitors,tickets:seedTickets,participants:seedParticipants,communications_log:seedCommunications,affiliate_referrals:seedReferrals};
-const key=(table:string)=>`goai-v1-${table}`;
+const key=(table:string)=>`goai-v2-${table}`;
 const localRead=<K extends keyof TableMap>(table:K):TableMap[K][]=>{if(typeof window==="undefined")return seeds[table];const raw=localStorage.getItem(key(table));if(!raw){localStorage.setItem(key(table),JSON.stringify(seeds[table]));return seeds[table]}return JSON.parse(raw)};
 const localWrite=<K extends keyof TableMap>(table:K,rows:TableMap[K][])=>localStorage.setItem(key(table),JSON.stringify(rows));
 export const dataMode=configured?"supabase":"local";
