@@ -18,9 +18,9 @@ export const seedExhibitors:Exhibitor[]=[
   {id:"seed-ex-steambox",product_name:"STEAMBOX",category:"Digital Fair Partner",description:"GOAI Summit digital fair exhibitor.",exhibitor_contact:""},
 ];
 export const seedTickets:Ticket[]=[
-  {id:"seed-ticket-1",category_name:"Standard",price_amount:499,currency:"USD",inclusions:"5-day summit access, all sessions, meals and city tour",refund_policy:"Placeholder — final terms to be confirmed"},
-  {id:"seed-ticket-2",category_name:"VIP",price_amount:999,currency:"USD",inclusions:"Standard inclusions, VIP seating, Gala Dinner priority and networking access",refund_policy:"Placeholder — final terms to be confirmed"},
-  {id:"seed-ticket-3",category_name:"Group (5+)",price_amount:399,currency:"USD",inclusions:"Standard inclusions for groups of five or more",refund_policy:"Placeholder — final terms to be confirmed"},
+  {id:"seed-ticket-1",category_name:"Executive Package",price_amount:326,currency:"USD",inclusions:"Executive summit access package.",refund_policy:"Terms and refund policy will be shared during registration."},
+  {id:"seed-ticket-2",category_name:"VIP Executive Package",price_amount:1400,currency:"USD",inclusions:"VIP executive summit access package.",refund_policy:"Terms and refund policy will be shared during registration."},
+  {id:"seed-ticket-3",category_name:"Elite Presidential",price_amount:2960,currency:"USD",inclusions:"Elite presidential summit experience.",refund_policy:"Terms and refund policy will be shared during registration."},
 ];
 export const seedParticipants:Participant[]=[];
 export const seedCommunications:Communication[]=[
