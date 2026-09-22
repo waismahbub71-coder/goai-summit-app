@@ -25,3 +25,4 @@
 - Added fair partner organization and community signup features.
 - Summit ticket packages and pricing have been updated.
 - Added participant document submission page
+- Clarified passport document submission link text.
