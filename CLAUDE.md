@@ -24,3 +24,4 @@
 - Added signup flow (user registration) and admin-only editing capability
 - Added fair partner organization and community signup features.
 - Summit ticket packages and pricing have been updated.
+- Added participant document submission page
